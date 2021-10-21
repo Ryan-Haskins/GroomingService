@@ -12,6 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using GroomingService.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GroomingService
 {
@@ -26,6 +27,8 @@ namespace GroomingService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<GroomingContext>(opt => opt.UseSqlServer
+                (Configuration.GetConnectionString("GroomingConnection")));
 
             services.AddControllers();
 
