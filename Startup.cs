@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using GroomingService.Data;
 
 namespace GroomingService
 {
@@ -27,6 +28,8 @@ namespace GroomingService
         {
 
             services.AddControllers();
+
+            services.AddScoped<ICaseRepo, MockCaseRepo>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroomingService", Version = "v1" });
