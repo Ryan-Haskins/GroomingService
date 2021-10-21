@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\CodingProjects\\GroomingService\\GroomingService.csproj",
+      "projectUniqueName": "E:\\Documents\\CodingProjects\\GroomingService\\GroomingService.csproj",
       "projectName": "GroomingService",
-      "projectPath": "D:\\Documents\\CodingProjects\\GroomingService\\GroomingService.csproj",
+      "projectPath": "E:\\Documents\\CodingProjects\\GroomingService\\GroomingService.csproj",
       "packagesPath": "C:\\Users\\ryanh\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\CodingProjects\\GroomingService\\obj\\",
+      "outputPath": "E:\\Documents\\CodingProjects\\GroomingService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ryanh\\AppData\\Roaming\\NuGet\\NuGet.Config",

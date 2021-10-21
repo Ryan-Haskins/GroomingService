@@ -10,7 +10,12 @@ namespace GroomingService.Controllers
     [ApiController]
     public class CasesController : ControllerBase
     {
-        private readonly MockCaseRepo _repository = new MockCaseRepo();
+        private readonly ICaseRepo _repository;
+        public CasesController(ICaseRepo repository)
+        {
+            _repository = repository;
+        }
+        //private readonly MockCaseRepo _repository = new MockCaseRepo();
 
         [HttpGet]
         public ActionResult <IEnumerable<Case>> GetAllCases()
