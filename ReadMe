@@ -1,0 +1,4 @@
+Dotnet ef migrations add --nameOfMigration
+Dotnet ef migrations remove (removes all migrations)
+
+DB: ID = GroomingAPI Password= Pa55w0rd!
