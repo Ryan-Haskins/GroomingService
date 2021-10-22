@@ -1,9 +1,14 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace GroomingService.Models
 {
     public class Case
     {
-        public string Id { get; set; }
-        public string PetId { get; set; }
-        public string OwnerId { get; set; }
+        [Key]
+        public int Id { get; set; }
+        [Required]
+        public int PetId { get; set; }
+        [Required]
+        public int OwnerId { get; set; }
     }
 }
