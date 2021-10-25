@@ -32,7 +32,7 @@ namespace GroomingService
 
             services.AddControllers();
 
-            services.AddScoped<ICaseRepo, MockCaseRepo>();
+            services.AddScoped<ICaseRepo, sqlCaseRepo>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroomingService", Version = "v1" });

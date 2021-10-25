@@ -26,7 +26,7 @@ namespace GroomingService.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult <Case> GetCaseById(string id)
+        public ActionResult <Case> GetCaseById(int id)
         {
             var caseItem = _repository.GetCaseById(id);
 

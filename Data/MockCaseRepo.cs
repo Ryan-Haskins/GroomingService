@@ -16,7 +16,7 @@ namespace GroomingService.Data
             return cases;
         }
 
-        public Case GetCaseById(string id)
+        public Case GetCaseById(int id)
         {
             return new Case{Id=0, PetId=1, OwnerId=2};
         }
