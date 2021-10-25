@@ -3,3 +3,7 @@ Dotnet ef migrations remove (removes all migrations)
 
 DB: ID = GroomingAPI Password= Pa55w0rd!
 dotnet ef database update -- updates the db.
+
+Packages:
+EntityFramework
+AutoMapper ---DTO's

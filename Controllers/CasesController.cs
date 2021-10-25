@@ -1,7 +1,9 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using GroomingService.Models;
 using System.Collections.Generic;
 using GroomingService.Data;
+using GroomingService.Dtos;
 
 namespace GroomingService.Controllers
 {
@@ -11,26 +13,31 @@ namespace GroomingService.Controllers
     public class CasesController : ControllerBase
     {
         private readonly ICaseRepo _repository;
-        public CasesController(ICaseRepo repository)
+        private readonly IMapper _mapper;
+        public CasesController(ICaseRepo repository, IMapper mapper)
         {
             _repository = repository;
+            _mapper = mapper;
         }
-        //private readonly MockCaseRepo _repository = new MockCaseRepo();
 
         [HttpGet]
-        public ActionResult <IEnumerable<Case>> GetAllCases()
+        public ActionResult <IEnumerable<CaseReadDto>> GetAllCases()
         {
             var cases = _repository.GetAllCases();
 
-            return Ok(cases);
+            return Ok(_mapper.Map<IEnumerable<CaseReadDto>>(cases));
         }
 
         [HttpGet("{id}")]
-        public ActionResult <Case> GetCaseById(int id)
+        public ActionResult <CaseReadDto> GetCaseById(int id)
         {
             var caseItem = _repository.GetCaseById(id);
-
-            return Ok(caseItem);
+            if(caseItem != null)
+            {
+                return Ok(_mapper.Map<CaseReadDto>(caseItem));
+            }
+            
+            return NotFound();
         }
     }
 }
