@@ -8,7 +8,10 @@ namespace GroomingService.Profiles
     {
         public CaseProfile()
         {
+            //Source -> target
             CreateMap<Case, CaseReadDto>();
+            //target -> Source
+            CreateMap<CaseCreateDto, Case>();
         }
     }
 }

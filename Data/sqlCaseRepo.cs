@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using GroomingService.Models;
+using System;
+
 
 namespace GroomingService.Data
 {
@@ -19,6 +21,21 @@ namespace GroomingService.Data
         public Case GetCaseById(int id)
         {
             return _context.Cases.FirstOrDefault(c => c.Id == id);
+        }
+
+        public void CreateCase(Case caseData)
+        {
+            if (caseData == null) 
+            {
+                throw new ArgumentNullException(nameof(caseData));
+            }
+
+            _context.Cases.Add(caseData);
+        }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
         }
     }
 }

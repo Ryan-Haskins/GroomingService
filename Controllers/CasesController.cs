@@ -28,7 +28,7 @@ namespace GroomingService.Controllers
             return Ok(_mapper.Map<IEnumerable<CaseReadDto>>(cases));
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetCaseById")]
         public ActionResult <CaseReadDto> GetCaseById(int id)
         {
             var caseItem = _repository.GetCaseById(id);
@@ -38,6 +38,20 @@ namespace GroomingService.Controllers
             }
             
             return NotFound();
+        }
+
+        [HttpPost]
+        public ActionResult <CaseReadDto> CreateCase(CaseCreateDto caseCreateDto)
+        {
+            //mapping the case data coming in to the case model using auto mapper.
+            var caseModel = _mapper.Map<Case>(caseCreateDto);
+            _repository.CreateCase(caseModel);
+            _repository.SaveChanges();
+
+            var CaseReadDto = _mapper.Map<CaseReadDto>(caseModel);
+            
+            //creates 201 created route  grab url for header, grab ID to know what id needs to be addded to url then add the data.
+            return CreatedAtRoute(nameof(GetCaseById), new {Id = CaseReadDto.Id}, CaseReadDto);
         }
     }
 }

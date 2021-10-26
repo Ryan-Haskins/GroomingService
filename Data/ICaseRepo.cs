@@ -5,8 +5,10 @@ namespace GroomingService.Data
 {
     public interface ICaseRepo
     {
+        bool SaveChanges();
         IEnumerable<Case> GetAllCases();
         Case GetCaseById(int id);
+        void CreateCase(Case caseData);
         
     }
 }

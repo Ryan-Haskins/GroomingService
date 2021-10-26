@@ -20,5 +20,15 @@ namespace GroomingService.Data
         {
             return new Case{Id=0, PetId=1, OwnerId=2};
         }
+
+        public bool SaveChanges()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void CreateCase(Case caseData)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
