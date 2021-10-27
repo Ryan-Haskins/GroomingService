@@ -33,6 +33,20 @@ namespace GroomingService.Data
             _context.Cases.Add(caseData);
         }
 
+        public void UpdateCase(Case caseData)
+        {
+           //nothing
+        }
+
+        public void DeleteCase(Case caseData)
+        {
+            if (caseData == null) 
+            {
+                throw new ArgumentNullException(nameof(caseData));
+            }
+            _context.Cases.Remove(caseData);
+        }
+
         public bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);

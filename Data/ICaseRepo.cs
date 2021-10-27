@@ -9,6 +9,7 @@ namespace GroomingService.Data
         IEnumerable<Case> GetAllCases();
         Case GetCaseById(int id);
         void CreateCase(Case caseData);
-        
+        void UpdateCase(Case caseData);
+        void DeleteCase(Case caseData);
     }
 }

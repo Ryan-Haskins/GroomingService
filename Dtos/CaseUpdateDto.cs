@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GroomingService.Dtos
 {
-    public class CaseCreateDto
+    public class CaseUpdateDto
     {
         [Required]
         public int PetId { get; set; }
