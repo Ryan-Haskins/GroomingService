@@ -30,5 +30,15 @@ namespace GroomingService.Data
         {
             throw new System.NotImplementedException();
         }
+
+        public void UpdateCase(Case caseData)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteCase(Case caseData)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

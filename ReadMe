@@ -7,3 +7,9 @@ dotnet ef database update -- updates the db.
 Packages:
 EntityFramework
 AutoMapper ---DTO's
+
+Profiles:
+Help to set up the auto mapper feature to map Dto to model
+
+Patch:
+Is a part update instead of having to define the entire object.

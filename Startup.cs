@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using GroomingService.Data;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 
 namespace GroomingService
 {
@@ -24,7 +25,9 @@ namespace GroomingService
             services.AddDbContext<GroomingContext>(opt => opt.UseSqlServer
                 (Configuration.GetConnectionString("GroomingConnection")));
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(s => {
+                s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+            });
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ICaseRepo, sqlCaseRepo>();
