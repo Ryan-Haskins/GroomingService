@@ -10,5 +10,6 @@ namespace GroomingService.Data
         }
 
         public DbSet<Case> Cases { get; set; }
+        public DbSet<Pet> Pets { get; set; }
     }
 }

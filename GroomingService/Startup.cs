@@ -31,6 +31,8 @@ namespace GroomingService
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<ICaseRepo, sqlCaseRepo>();
+            services.AddScoped<IPetRepo, sqlPetRepo>();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GroomingService", Version = "v1" });
