@@ -63,10 +63,9 @@ namespace GroomingService.Controllers
             {
                 return NotFound();
             }
+            
             _mapper.Map(caseUpdateDto, getCaseModel);
-
             _repository.UpdateCase(getCaseModel);
-
             _repository.SaveChanges();
 
             return NoContent();
